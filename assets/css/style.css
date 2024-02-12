@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   font-size: 1.2rem;
   line-height: 1.65;
-  margin-left: 170px;
+ margin: 0px 170px;
 }
 section p,
 ul,
@@ -103,10 +103,9 @@ label {
     box-shadow:0px 0px 30px  #00FFFF ;
     cursor: pointer;
     font-size: 16px;
+    position: relative;
+    right: -600px;
     
 }
 
-#divUno {
-    text-align: right;
 
-}
