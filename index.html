@@ -37,12 +37,17 @@
           <li>This exam will take approx. <b>0-5 minutes.</b></li>
         </ul>
       </div>
-      <input type="checkbox" id="checkbox" name="checkbox" />
-      <label for="checkbox"
-        ><b>I promise to answer myself witout help from anyone</b></label
-      >
+      <div>
+        <input type="checkbox" id="checkbox" /><label for="checkbox">I promise to answer myself without help from anyone</label>
+        <button id="bottone">PROCEED</button>
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <span class="close">&times;</span>
+            <p>Devi accettare i termini e le condizioni per poter procedere.</p>
+          </div>
+        </div>
+      </div>
     </main>
-
     <script src="assets/js/script.js"></script>
   </body>
 </html>
