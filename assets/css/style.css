@@ -1,13 +1,12 @@
 body {
-    color: white;
-    background-image: url(../img/bg.jpg);
-    background-size: cover;
-    font-family: 'Outfit', sans-serif;
-    box-sizing: border-box;
-    font-size: 1.2rem;
-    line-height: 1.65;
-    margin-left: 170px;
-
+  color: white;
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  font-family: "Outfit", sans-serif;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  margin-left: 170px;
 }
 section p,
 ul,
@@ -15,44 +14,57 @@ li,
 li b,
 label,
 input[type="text"] {
-font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-header img{
-    width: 20em;
+header img {
+  width: 20em;
 }
 
-header{
-    margin-top: 80px;
-    margin-bottom: 180px;
-
+header {
+  margin-top: 80px;
+  margin-bottom: 180px;
 }
 
-
-h1{
-    
-    line-height: 1;
-    font-size: 8em;
+h1 {
+  line-height: 1;
+  font-size: 6em;
+  margin-bottom: 0.3em;
 }
 
-h1 span{
-    font-weight: 500;
+h1 span {
+  font-weight: 500;
 }
 
-h3{
-    font-size: 4em;
-    color: #d20094;
-    margin-bottom: 0;
+h3 {
+  font-size: 2.5em;
+  color: #d20094;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-#paragrafo1{
-    width: 55%;
+#paragrafo1 {
+  width: 55%;
+  margin-bottom: 70px;
+}
+#paragrafo1 p {
+  margin-top: 0;
 }
 
-p{
-    font-size: 1.5em;
+p {
+  font-size: 1.5em;
+}
+ul {
+  margin-bottom: 100px;
+}
+ul li {
+  font-size: 1.4em;
 }
 
-ul li{
-    font-size: 1.3em;
+#checkbox {
+  margin-bottom: 120px;
+}
+
+label {
+  font-size: 1.2em;
 }
