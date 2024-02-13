@@ -105,7 +105,27 @@
                 let testo = document.createElement("p"); //Aggiungiamo nel timer la scritta "seconds"
                 // testo.innerText = "seconds";
                 // countdown.appendchild(testo);
-                
+                let indiceDomandaCorrente = 0;
+const domandaElement = document.getElementById("domanda");
+const bottoneAvanti = document.getElementById("bottone");
+
+// Funzione per mostrare la domanda corrente
+function mostraDomanda() {
+  domandaElement.textContent = questions[indiceDomandaCorrente].question;
+}
+
+// Funzione per passare alla domanda successiva
+function PROCEED() {
+  indiceDomandaCorrente++;
+  if (indiceDomandaCorrente >= questions.length) {
+    indiceDomandaCorrente = 0; // Se si raggiunge la fine delle domande, torna alla prima domanda
+  }
+  mostraDomanda();
+}
+// Mostra la prima domanda all'avvio
+mostraDomanda();
+// Gestore dell'evento click per il bottone
+bottoneAvanti.addEventListener("click", PROCEED);
               
                 let countdownInterval = setInterval(function () {
                   // Aggiorna il testo del countdown
@@ -138,7 +158,7 @@
         
             window.onload = function () {
                 estraiDomanda();
-
+                PROCEED();
 
         
              
@@ -155,7 +175,7 @@
  let elemento = estraiDomanda();
 //  let undefined;
 
- stampaDomanda = (elemento) => {
+ /*stampaDomanda = (elemento) => {
     const domande = document.getElementById("domande");
    domande.innerText = elemento.question;
    const risposteSbagliate = document.getElementsByClassName("btn")
@@ -164,13 +184,29 @@
 }
 const rispostaGiusta = document.getElementById("btnDue");
    rispostaGiusta.innerHTML = elemento.correct_answer; 
+}*/
+
+let indiceDomandaCorrente = 0;
+const domandaElement = document.getElementById("domanda");
+const bottoneAvanti = document.getElementById("bottone");
+
+// Funzione per mostrare la domanda corrente
+function mostraDomanda() {
+  domandaElement.textContent = questions[indiceDomandaCorrente].question;
 }
-   
-   
 
-   
-
-
+// Funzione per passare alla domanda successiva
+function PROCEED() {
+  indiceDomandaCorrente++;
+  if (indiceDomandaCorrente >= questions.length) {
+    indiceDomandaCorrente = 0; // Se si raggiunge la fine delle domande, torna alla prima domanda
+  }
+  mostraDomanda();
+}
+// Mostra la prima domanda all'avvio
+mostraDomanda();
+// Gestore dell'evento click per il bottone
+bottoneAvanti.addEventListener("click", PROCEED);
 stampaDomanda(elemento);
 
 
