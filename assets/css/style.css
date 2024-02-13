@@ -1,4 +1,4 @@
-/*Impostazioni generali*/
+
 body {
   color: white;
   background-image: url(../img/bg.jpg);
@@ -8,6 +8,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.65;
   margin: 0px 170px;
+
 }
 
 section p,
@@ -112,3 +113,78 @@ label {
   position: relative;
   right: -600px;
 }
+
+/* CSS PAGINA 2*/
+
+#main2{
+  text-align: center;
+}
+
+.btn{
+  width: 400px;
+  height: 80px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 50px;
+  border: 3px solid white;
+  background-color: transparent;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#domande{
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+btn:active, .btn:focus {
+  background-color: rgb(220, 1, 220);
+}
+
+span{
+  color: #d20094;
+}
+
+h4{
+  margin-top: 50px;
+}
+
+/*PROVA TIMER*/
+
+.countdown-container {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.progressbar {
+  position: relative;
+}
+
+.progressbar-circle {
+  fill: transparent;
+  stroke: rgb(247, 242, 242, 0.2);
+  stroke-width: 20;
+
+}
+
+.progressbar-progress {
+  fill: none;
+  stroke: #00FFFF;
+  stroke-width: 20;
+  stroke-dasharray: 502; /* Circonferenza del cerchio: 2 * π * r /
+  stroke-dashoffset: 502; / Nascondi inizialmente la barra di scorrimento /
+  transition: stroke-dashoffset 1s ease; / Aggiungi un'animazione di transizione */
+}
+
+.progressbar-text {
+  font-size: 50px;
+  font-weight: 600;
+  fill: white;
+  font-family: Arial, sans-serif;
+}
+
+#headerDue {
+  margin-bottom: 0;
+}
+
