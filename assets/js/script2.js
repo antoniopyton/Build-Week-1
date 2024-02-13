@@ -137,8 +137,52 @@
               
         
             window.onload = function () {
+                estraiDomanda();
+
+
         
-              // TIPS:
+             
+            };
+
+
+
+ estraiDomanda = () => { // Dichiaro la funzione per estrarre la domanda
+     const randomIndex = Math.floor(Math.random() * questions.length); // Andiamo ad estrarre una domanda randomicamente
+     return questions[randomIndex] // Dichiariamo la variabile elemento per non doverla richiamare ogni volta
+     
+
+ }
+ let elemento = estraiDomanda();
+//  let undefined;
+
+ stampaDomanda = (elemento) => {
+    const domande = document.getElementById("domande");
+   domande.innerText = elemento.question;
+   const risposteSbagliate = document.getElementsByClassName("btn")
+   for (let i = 0; i < risposteSbagliate.length; i++) {
+    risposteSbagliate[i].innerHTML = elemento.incorrect_answers[i]
+}
+const rispostaGiusta = document.getElementById("btnDue");
+   rispostaGiusta.innerHTML = elemento.correct_answer; 
+}
+   
+   
+
+   
+
+
+stampaDomanda(elemento);
+
+
+//  const rispostaGiusta = document.getElementsByClassName("btn"); //
+//       const risposteSbagliate = document.getElementsByClassName("btnDue"); 
+//      let domandaEstratta;
+//      for (let i = 0; i < questions.length; i++) { // Apro un ciclo per recuperare le domande
+
+
+//     }
+            
+         // TIPS:
         
               // SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
               // Per ogni domanda, crea un container e incorporale tutte all'interno. 
@@ -151,8 +195,6 @@
               // Mostra la prima domanda con il testo e i radio button.
               // Quando l'utente seleziona una risposta, passa alla domanda successiva dell'array e sostituisci quella precedentemente visualizzata con quella corrente,
               // salvando le risposte dell'utente in una variabile
-            };
-        
               // Come calcolare il risultato? Hai due strade:
               // Se stai mostrando tutte le domande nello stesso momento, controlla semplicemente se i radio button selezionati sono === correct_answer
               // Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
