@@ -1,4 +1,3 @@
-
 const questions = [
   {
     category: "Science: Computers",
@@ -66,11 +65,7 @@ const questions = [
     question:
       "What is the code name for the mobile operating system Android 7.0?",
     correct_answer: "Nougat",
-    incorrect_answers: [
-      "Ice Cream Sandwich",
-      "Jelly Bean",
-      "Marshmallow",
-    ],
+    incorrect_answers: ["Ice Cream Sandwich", "Jelly Bean", "Marshmallow"],
   },
   {
     category: "Science: Computers",
@@ -111,6 +106,7 @@ const mostraDomanda = (elemento) => {
 
   mostraRisposte(elemento);
   mostraRispostaGiusta(elemento);
+  aggiungiClickRisposte();
   aggiornaNumeroDomanda();
   avviaTimer();
 };
@@ -119,12 +115,26 @@ const mostraDomanda = (elemento) => {
 const mostraRisposte = (elemento) => {
   const risposteSbagliate = document.querySelectorAll(".btn");
   risposteSbagliate.forEach((button, i) => {
+    if (button.id !== "btnDue") {
       if (elemento.incorrect_answers[i] != null) {
-          button.innerHTML = elemento.incorrect_answers[i];
-          button.style.display = "inline-block";
+        button.innerHTML = elemento.incorrect_answers[i];
+        button.style.display = "inline-block";
       } else {
-          button.style.display = "none";
+        button.style.display = "none";
       }
+    }
+  });
+};
+
+aggiungiClickRisposte = () => {
+  const risposteSbagliate = document.querySelectorAll(".btn");
+  risposteSbagliate.forEach((button, i) => {
+    button.addEventListener("click", function () {
+      risposteSbagliate.forEach((risposta) => {
+        risposta.classList.remove("selezionato");
+      });
+      button.classList.add("selezionato");
+    });
   });
 };
 
@@ -146,17 +156,17 @@ const avviaTimer = () => {
   let progressbarCircle = document.querySelector(".progressbar-progress");
 
   const updateTimer = () => {
-      document.querySelector(".progressbar-text").textContent = countdown;
-      let percentCompleted = (countdown / 10) * 100;
-      let dashOffset = 502 - (502 * percentCompleted) / 100;
-      progressbarCircle.style.strokeDashoffset = dashOffset;
-      countdown--;
+    document.querySelector(".progressbar-text").textContent = countdown;
+    let percentCompleted = (countdown / 10) * 100;
+    let dashOffset = 502 - (502 * percentCompleted) / 100;
+    progressbarCircle.style.strokeDashoffset = dashOffset;
+    countdown--;
 
-      if (countdown < 0) {
-          procediConDomandaSuccessiva();
-      } else {
-          countdownInterval = setTimeout(updateTimer, 1000);
-      }
+    if (countdown < 0) {
+      procediConDomandaSuccessiva();
+    } else {
+      countdownInterval = setTimeout(updateTimer, 1000);
+    }
   };
 
   updateTimer();
@@ -164,20 +174,30 @@ const avviaTimer = () => {
 
 // Funzione per gestire il click sul pulsante "PROCEED"
 const procediConDomandaSuccessiva = () => {
+  const rispostaSelezionata = document.getElementsByClassName("selezionato")[0];
+
   const rispostaGiusta = document.getElementById("btnDue");
-  if (rispostaGiusta.matches(":active, :focus")) {
-      ArrayRisposte.push(rispostaGiusta.innerText);
+  if (rispostaGiusta.innerText === rispostaSelezionata.innerText) {
+    ArrayRisposte.push(true);
   }
   console.log(ArrayRisposte);
   domande++;
 
   if (domande >= questions.length) {
-      window.location.href = "index3.html";
-      return;
+    window.location.href = "index3.html";
+    return;
   }
 
   const elementoDomandaSuccessiva = questions[domande];
+  const selezionati = document.querySelectorAll(".selezionato");
+  selezionati.forEach((button) => {
+    button.classList.remove("selezionato");
+  });
   mostraDomanda(elementoDomandaSuccessiva);
+  //rimuovere tutte le classi selezionate,get seleionati e togliere poi la classe selezionata. for each remove class per i btn
+  // document.getElementsByClassName("selezionato").forEach((button) => {
+  //   button.classList.remove("selezionato");
+  // });
 };
 
 // Funzione per aggiungere un listener al click sul pulsante "PROCEED"
@@ -195,23 +215,22 @@ const inizializzaQuiz = () => {
 // Avvia il quiz quando la pagina si carica
 document.addEventListener("DOMContentLoaded", inizializzaQuiz);
 
-  // TIPS:
+// TIPS:
 
-  // SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
-  // Per ogni domanda, crea un container e incorporale tutte all'interno. 
-  // Crea poi dei radio button
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-  // con le risposte corrette e incorrette come opzioni
-  // (dovrai probabilmente cercare su un motore di ricerca come ottenere un valore da un radio button in JS per ottenere il punteggio finale) 
-  //
-  // SE MOSTRI UNA DOMANDA ALLA VOLTA:
-  // Mostra la prima domanda con il testo e i radio button.
-  // Quando l'utente seleziona una risposta, passa alla domanda successiva dell'array e sostituisci quella precedentemente visualizzata con quella corrente,
-  // salvando le risposte dell'utente in una variabile
+// SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
+// Per ogni domanda, crea un container e incorporale tutte all'interno.
+// Crea poi dei radio button
+// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+// con le risposte corrette e incorrette come opzioni
+// (dovrai probabilmente cercare su un motore di ricerca come ottenere un valore da un radio button in JS per ottenere il punteggio finale)
+//
+// SE MOSTRI UNA DOMANDA ALLA VOLTA:
+// Mostra la prima domanda con il testo e i radio button.
+// Quando l'utente seleziona una risposta, passa alla domanda successiva dell'array e sostituisci quella precedentemente visualizzata con quella corrente,
+// salvando le risposte dell'utente in una variabile
 
+// Come calcolare il risultato? Hai due strade:
+// Se stai mostrando tutte le domande nello stesso momento, controlla semplicemente se i radio button selezionati sono === correct_answer
+// Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
 
-  // Come calcolare il risultato? Hai due strade:
-  // Se stai mostrando tutte le domande nello stesso momento, controlla semplicemente se i radio button selezionati sono === correct_answer
-  // Se stai mostrando una domanda alla volta, aggiungi semplicemente un punto alla variabile del punteggio che hai precedentemente creato SE la risposta selezionata è === correct_answer
-
-  // BUON LAVORO 💪🚀
+// BUON LAVORO 💪🚀
