@@ -135,6 +135,7 @@ aggiungiClickRisposte = () => {
       });
       button.classList.add("selezionato");
       btnProcedi.disabled = false;
+      btnProcedi.classList.add("bottone");
     });
   });
 };
@@ -194,7 +195,10 @@ const procediConDomandaSuccessiva = () => {
   selezionati.forEach((button) => {
     button.classList.remove("selezionato");
   });
+
   mostraDomanda(elementoDomandaSuccessiva);
+  btnProcedi.disabled = true;
+  btnProcedi.classList.remove("bottone");
   //rimuovere tutte le classi selezionate,get seleionati e togliere poi la classe selezionata. for each remove class per i btn
   // document.getElementsByClassName("selezionato").forEach((button) => {
   //   button.classList.remove("selezionato");
