@@ -99,88 +99,75 @@
               },
             ];
         
-              timer = () => {
-                let countdown = 10; // Imposta il tempo di countdown in secondi
-                let progressbarCircle = document.querySelector(".progressbar-progress"); //mettiamo su html elemento corrispondente
-                let testo = document.createElement("p"); //Aggiungiamo nel timer la scritta "seconds"
-                // testo.innerText = "seconds";
-                // countdown.appendchild(testo);
-                
-              
-                let countdownInterval = setInterval(function () {
-                  // Aggiorna il testo del countdown
-                  document.querySelector(".progressbar-text").textContent = countdown;
-              
-                  // Calcola la percentuale completata del countdown
-                  let percentCompleted = (countdown / 10) * 100;
-              
-                  // Calcola l'offset del dash in base alla percentuale completata
-                  let dashOffset = 502 - (502 * percentCompleted) / 100;
-              
-                  // Aggiorna l'offset del dash della barra di scorrimento
-                  progressbarCircle.style.strokeDashoffset = dashOffset;
-              
-                  //   // Diminuisci il contatore di 1 secondo
-                  countdown--;
-              
-                  // Se il countdown è arrivato a 0, ferma il setInterval
-                  if (countdown < 0) {
-                    clearInterval(countdownInterval);
-                    setTimeout(function () {
-                      timer();
-                    }, 2000);
-                  }
-                }, 1000); // Esegui la funzione ogni secondo (1000 millisecondi)
-              };
-              
-              timer();
-              
-        
-            window.onload = function () {
-                estraiDomanda();
-
-
-        
-             
+            let domande = 0;
+            let countdownInterval;
+            
+            const mostraDomanda = (elemento) => {
+              clearTimeout(countdownInterval);
+              const domandeElement = document.getElementById("domande");
+              domandeElement.innerText = elemento.question;
+            
+              const risposteSbagliate = document.querySelectorAll(".btn");
+              risposteSbagliate.forEach((button, i) => {
+                if (elemento.incorrect_answers[i] != null) {
+                  button.innerHTML = elemento.incorrect_answers[i];
+                  button.style.display = "inline-block"; // Assicura che il pulsante sia visibile
+                } else {
+                  button.style.display = "none"; // Nasconde solo i pulsanti con risposte non definite
+                }
+              });
+            
+              const rispostaGiusta = document.getElementById("btnDue");
+              rispostaGiusta.innerHTML = elemento.correct_answer;
+            
+              const numeroQuestion = document.getElementById("numeroQuestionId");
+              numeroQuestion.innerText = domande + 1;
+            
+              timer(); // Avvia il timer solo quando viene mostrata una nuova domanda
             };
-
-
-
- estraiDomanda = () => { // Dichiaro la funzione per estrarre la domanda
-     const randomIndex = Math.floor(Math.random() * questions.length); // Andiamo ad estrarre una domanda randomicamente
-     return questions[randomIndex] // Dichiariamo la variabile elemento per non doverla richiamare ogni volta
-     
-
- }
- let elemento = estraiDomanda();
-//  let undefined;
-
- stampaDomanda = (elemento) => {
-    const domande = document.getElementById("domande");
-   domande.innerText = elemento.question;
-   const risposteSbagliate = document.getElementsByClassName("btn")
-   for (let i = 0; i < risposteSbagliate.length; i++) {
-    risposteSbagliate[i].innerHTML = elemento.incorrect_answers[i]
-}
-const rispostaGiusta = document.getElementById("btnDue");
-   rispostaGiusta.innerHTML = elemento.correct_answer; 
-}
-   
-   
-
-   
-
-
-stampaDomanda(elemento);
-
-
-//  const rispostaGiusta = document.getElementsByClassName("btn"); //
-//       const risposteSbagliate = document.getElementsByClassName("btnDue"); 
-//      let domandaEstratta;
-//      for (let i = 0; i < questions.length; i++) { // Apro un ciclo per recuperare le domande
-
-
-//     }
+            
+            const PROCEED = () => {
+              domande++;
+              if (domande >= questions.length) {
+                window.location.href = "index3.html"; // Reindirizza a index3.html quando le domande sono finite
+                return;
+              }
+              
+              const elementoDomandaSuccessiva = questions[domande];
+              mostraDomanda(elementoDomandaSuccessiva);
+            };
+            
+            const timer = () => {
+              let countdown = 10;
+              let progressbarCircle = document.querySelector(".progressbar-progress");
+            
+              const updateTimer = () => {
+                document.querySelector(".progressbar-text").textContent = countdown;
+            
+                let percentCompleted = (countdown / 10) * 100;
+                let dashOffset = 502 - (502 * percentCompleted) / 100;
+                progressbarCircle.style.strokeDashoffset = dashOffset;
+            
+                countdown--;
+            
+                if (countdown < 0) {
+                  PROCEED(); // Passa automaticamente alla domanda successiva quando il timer arriva a 0
+                } else {
+                  countdownInterval = setTimeout(updateTimer, 1000);
+                }
+              };
+            
+              updateTimer();
+            };
+             
+            
+            const bottoneAvanti = document.getElementById("bottone");
+            bottoneAvanti.addEventListener("click", PROCEED);
+            
+            mostraDomanda(questions[domande]);
+            
+            
+            
             
          // TIPS:
         
