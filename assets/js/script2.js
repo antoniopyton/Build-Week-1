@@ -133,7 +133,7 @@ const PROCEED = () => {
     window.location.href = "index3.html"; // Reindirizza a index3.html quando le domande sono finite
     return;
   }
-
+  
   const elementoDomandaSuccessiva = questions[domande];
   mostraDomanda(elementoDomandaSuccessiva);
 };
@@ -160,7 +160,7 @@ const timer = () => {
 
   updateTimer();
 };
-[12:46]
+ 
 const bottoneAvanti = document.getElementById("bottone");
 bottoneAvanti.addEventListener("click", PROCEED);
 
