@@ -1,4 +1,3 @@
-/*Impostazioni generali*/
 body {
   color: white;
   background-image: url(../img/bg.jpg);
@@ -20,27 +19,31 @@ input[type="text"] {
 }
 
 header img {
-  width: 20em;
+  width: 10em;
 }
 
 header {
   margin-top: 80px;
-  margin-bottom: 180px;
+  margin-bottom: 90px;
 }
 
 /*Prima pagina HTML*/
 h1 {
-  line-height: 1;
-  font-size: 6em;
+  line-height: 0.8;
+  font-size: 5em;
   margin-bottom: 0.3em;
 }
 
 h1 span {
-  font-weight: 500;
+  font-weight: 350;
+  color: white;
+}
+#spesso {
+  font-weight: bolder;
 }
 
 h3 {
-  font-size: 2.5em;
+  font-size: 1.7em;
   color: #d20094;
   margin-top: 0;
   margin-bottom: 0;
@@ -48,7 +51,7 @@ h3 {
 
 #paragrafo1 {
   width: 55%;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 #paragrafo1 p {
@@ -56,7 +59,8 @@ h3 {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 1em;
+  line-height: 1.2em;
 }
 
 ul {
@@ -64,7 +68,7 @@ ul {
 }
 
 ul li {
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 #checkbox {
@@ -72,7 +76,7 @@ ul li {
 }
 
 label {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .popup {
@@ -99,16 +103,152 @@ label {
   cursor: pointer;
 }
 
-#bottone {
+.bottone {
   text-transform: uppercase;
+  width: 10em;
   font-weight: bold;
   padding: 18px 45px;
-  background-color: #00FFFF;
+  background-color: #00ffff;
   color: black;
   border: none;
-  box-shadow: 0px 0px 30px #00FFFF;
+  box-shadow: 0px 0px 30px #00ffff;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 24px;
   position: relative;
-  right: -600px;
+  right: -386px;
+}
+
+/* CSS PAGINA 2*/
+
+#main2 {
+  text-align: center;
+}
+
+.btn {
+  width: 400px;
+  height: 80px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 50px;
+  border: 3px solid white;
+  background-color: transparent;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#btnDue {
+  width: 400px;
+  height: 80px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  border-radius: 50px;
+  border: 3px solid white;
+  background-color: transparent;
+  margin: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+#domande {
+  font-size: 60px;
+  margin-bottom: 30px;
+}
+
+btn:active,
+.btn:focus {
+  background-color: rgb(220, 1, 220);
+}
+
+span {
+  color: #d20094;
+}
+
+h4 {
+  margin-top: 50px;
+}
+
+/*PROVA TIMER*/
+
+.countdown-container {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.progressbar {
+  position: relative;
+}
+
+.progressbar-circle {
+  fill: transparent;
+  stroke: rgb(247, 242, 242, 0.2);
+  stroke-width: 20;
+}
+
+.progressbar-progress {
+  fill: none;
+  stroke: #00ffff;
+  stroke-width: 20;
+  stroke-dasharray: 502; /* Circonferenza del cerchio: 2 * π * r /
+  stroke-dashoffset: 502; / Nascondi inizialmente la barra di scorrimento /
+  transition: stroke-dashoffset 1s ease; / Aggiungi un'animazione di transizione */
+}
+
+.progressbar-text {
+  font-size: 50px;
+  font-weight: 600;
+  fill: white;
+  font-family: Arial, sans-serif;
+}
+
+#headerDue {
+  margin-bottom: 0;
+}
+
+/* PAGINA 4 */
+
+#paginaQuattro {
+  text-align: center;
+}
+
+#paginaQuattro h1 {
+  color: #e7e7eb;
+  font-size: 60px;
+}
+#paginaQuattro h2 {
+  font-weight: 400;
+  width: 26em;
+  margin: 0 auto;
+}
+#headerQuattro {
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+
+#headerQuattro img {
+  width: 10em;
+}
+
+#paginaQuattro span {
+  text-transform: uppercase;
+  color: white;
+}
+
+#paginaQuattro input {
+  width: 43em;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px solid #d20094;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+#stelle {
+  margin-bottom: 3rem;
+  margin-top: 1em;
+}
+
+#btnInfo {
+  position: static;
 }
