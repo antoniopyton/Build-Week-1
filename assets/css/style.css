@@ -156,10 +156,15 @@ label {
   margin-bottom: 30px;
 }
 
-btn:active,
-.btn:focus {
+.btn:active,
+.btn:focus,
+#btnDue:active,
+#btnDue:focus {
   background-color: rgb(220, 1, 220);
 }
+
+
+
 
 span {
   color: #d20094;
