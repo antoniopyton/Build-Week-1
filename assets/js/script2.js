@@ -97,7 +97,7 @@ const questions = [
 let domande = 0;
 let countdownInterval;
 const ArrayRisposte = [];
-
+const btnProcedi = document.getElementById("bottone");
 // Funzione per mostrare una domanda
 const mostraDomanda = (elemento) => {
   clearTimeout(countdownInterval);
@@ -134,6 +134,7 @@ aggiungiClickRisposte = () => {
         risposta.classList.remove("selezionato");
       });
       button.classList.add("selezionato");
+      btnProcedi.disabled = false;
     });
   });
 };
