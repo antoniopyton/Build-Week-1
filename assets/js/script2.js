@@ -125,11 +125,8 @@ const mostraDomanda = (elemento) => {
   const numeroQuestion = document.getElementById("numeroQuestionId");
   numeroQuestion.innerText = domande + 1;
 
-  timer();
+  timer(); // Avvia il timer solo quando viene mostrata una nuova domanda
 };
-
-
-
 
 const PROCEED = () => {
   domande++;
@@ -169,7 +166,7 @@ const bottoneAvanti = document.getElementById("bottone");
 bottoneAvanti.addEventListener("click", PROCEED);
 
 mostraDomanda(questions[domande]);
-timer();
+
 
   // TIPS:
 
