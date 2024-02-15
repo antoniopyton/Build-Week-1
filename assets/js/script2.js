@@ -159,7 +159,7 @@ const aggiornaNumeroDomanda = () => {
 // Funzione per avviare il timer
 
 const avviaTimer = () => {
-  let countdown = 5;
+  let countdown = 30;
   let progressbarCircle = document.querySelector(".progressbar-progress");
 
   const updateTimer = () => {
