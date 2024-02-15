@@ -7,6 +7,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.65;
   margin: 0px 170px;
+  
 }
 
 section p,
@@ -287,15 +288,15 @@ h4 {
 }
 
 .chart-container{
-  width: 800px; /* Larghezza desiderata */
-    height: 600px; /* Altezza desiderata */
+  width: 500px; 
+    height: 500px; 
     margin: 0 auto;
 
 }
 
 .h1pg3{
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .h2pg3{
@@ -303,3 +304,21 @@ h4 {
   font-weight: lighter;
 }
 
+.btnpg3 {
+  width: 50%; /* Larghezza del 50% del contenitore genitore */
+  max-width: 200px; /* Massimo 200px di larghezza */
+  height: auto; /* Altezza automatica in base al contenuto */
+  margin: auto;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center; 
+  line-height: normal; /* Ripristina la line-height normale */
+  padding: 15px 20px; /* Riduci il padding */
+  position: absolute; 
+  left: 50%; 
+  bottom: 10%; /* Posiziona a 10% dal basso del contenitore */
+  transform: translateX(-50%);
+}
