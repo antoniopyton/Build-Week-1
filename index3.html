@@ -7,20 +7,32 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
- 
     <div class="divPg3">
         <h1 class="h1pg3">Results</h1>
         <h2 class="h2pg3">The summary of your answers:</h3>
     </div>
-    
+    <div class="contenitoreRisultati">
+<div class="riepilogo">
+      <h2 class="h1pg3">Correct</h2>
+      <h2 class="h1pg3" id="percentualeCorrette"></h2>
+      <p id="numCorrette"></p>
+    </div>
 <div class="chart-container">
-    
     <canvas id="myChart"></canvas>
-    
 </div>
-<button id="pg4" class="btnpg3">RATE US</button>
+<div class="riepilogo">
+      <h2 class="h1pg3">Incorrect</h2>
+      <h2 class="h1pg3" id="percentualeIncorrette"></h2>
+      <p id="numIncorrette"></p>
+    </div>
+    </div>
+    <button id="pg4" class="btnpg3">RATE US</button>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="assets/js/script3.js"></script>
 
 </body>
 </html>
+
+
+
+

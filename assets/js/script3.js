@@ -29,7 +29,7 @@ const dati = {
 const opzioni = {
   responsive: true,
   maintainAspectRatio: false,
-  cutout: 120, // Aumenta lo spazio interno alla ciambella
+  cutout: 170, // Aumenta lo spazio interno alla ciambella
 };
 
 // Ottieni il riferimento al canvas
