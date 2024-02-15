@@ -12,7 +12,7 @@ const dati = {
     
     datasets: [{
         data: [risposteCorrette, risposteSbagliate  ],
-        backgroundColor: ["#C2128D", "#41FFFF"],
+        backgroundColor: ["#41ffff", "#c2128d"],
         borderWidth: 0
     }]
 };
@@ -33,3 +33,8 @@ const myChart = new Chart(ctx, {
     data: dati,
     options: opzioni
 });
+
+const btnpg4 = document.getElementById('pg4');
+btnpg4.addEventListener('click', function(){
+    window.location.href='index4.html';
+})

@@ -321,4 +321,6 @@ h4 {
   left: 50%; 
   bottom: 10%; /* Posiziona a 10% dal basso del contenitore */
   transform: translateX(-50%);
+  cursor: pointer;
 }
+
