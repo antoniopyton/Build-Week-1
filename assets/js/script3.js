@@ -19,7 +19,7 @@ const dati = {
   datasets: [
     {
       data: [risposteSbagliate, risposteCorrette],
-      backgroundColor: ["#41FFFF", "#C2128D"],
+      backgroundColor: ["#C2128D", "#41FFFF"],
       borderWidth: 0,
     },
   ],
