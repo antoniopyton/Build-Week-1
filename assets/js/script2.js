@@ -94,6 +94,8 @@ const questions = [
   },
 ];
 
+localStorage.setItem("LunghezzaArrayDomande", JSON.stringify(questions));
+
 let domande = 0;
 let countdownInterval;
 const ArrayRisposte = [];

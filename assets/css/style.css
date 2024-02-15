@@ -129,7 +129,7 @@ label {
   position: relative;
   right: -386px;
 }
- 
+
 /* CSS PAGINA 2*/
 
 #main2 {
@@ -191,9 +191,9 @@ h4 {
 
 .progressbar-circle {
   fill: transparent;
-  stroke: rgb(247,  242,  242,  0.2);
-  stroke-width:  20;
-  
+  stroke: rgb(247, 242, 242, 0.2);
+  stroke-width: 20;
+
   transform: rotate(-90deg);
   transform-origin: center;
 }
@@ -201,15 +201,14 @@ h4 {
 .progressbar-progress {
   fill: none;
   stroke: #00ffff;
-  stroke-width:  20;
-  stroke-dasharray:  502;
-  stroke-dashoffset:  502;
-  transition: stroke-dashoffset  1s ease;
-  
+  stroke-width: 20;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  transition: stroke-dashoffset 1s ease;
+
   transform: rotate(-90deg);
   transform-origin: center;
 }
-
 
 .progressbar-text {
   font-size: 50px;
@@ -222,22 +221,57 @@ h4 {
   margin-bottom: 0;
 }
 
-
 /*pagina 3*/
-#stilepagina3{
+#stilepagina3 {
   color: white;
-  
 }
-.titolo3{
+.titolo3 {
   text-align: center;
   margin-bottom: 100px;
 }
-#bottone3{
+#bottone3 {
   text-align: center;
   margin-right: 800px;
   margin-top: 400px;
 }
- 
+
+.riepilogo {
+  border: 1px solid red;
+  display: inline-block;
+  vertical-align: middle;
+}
+.contenitoreRisultati {
+  position: absolute; /* Posizionamento assoluto */
+  top: 50%; /* Spostalo verso il 50% dell'altezza della finestra */
+  left: 50%; /* Spostalo verso il 50% della larghezza della finestra */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Sposta indietro di metà della propria dimensione */
+  text-align: center;
+  width: 100%; /* Allinea il testo al centro */
+}
+
+.chart-container {
+  width: 400px; /* Larghezza desiderata */
+  height: 300px; /* Altezza desiderata */
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.h1pg3 {
+  text-align: center;
+  font-size: 60px;
+  margin: 0;
+  margin-bottom: -20px;
+}
+
+.h2pg3 {
+  text-align: center;
+  font-weight: lighter;
+}
+
 /* PAGINA 4 */
 
 #paginaQuattro {
@@ -285,21 +319,3 @@ h4 {
 #btnInfo {
   position: static;
 }
-
-.chart-container{
-  width: 800px; /* Larghezza desiderata */
-    height: 600px; /* Altezza desiderata */
-    margin: 0 auto;
-
-}
-
-.h1pg3{
-  text-align: center;
-  font-size: 60px;
-}
-
-.h2pg3{
-  text-align: center;
-  font-weight: lighter;
-}
-
