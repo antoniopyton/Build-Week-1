@@ -221,6 +221,20 @@ h4 {
 #headerDue {
   margin-bottom: 0;
 }
+/*pagina 3*/
+#stilepagina3{
+  color: white;
+  
+}
+.titolo3{
+  text-align: center;
+  margin-bottom: 100px;
+}
+#bottone3{
+  text-align: center;
+  margin-right: 800px;
+  margin-top: 400px;
+}
  
 /* PAGINA 4 */
 
