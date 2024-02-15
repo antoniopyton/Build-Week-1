@@ -10,26 +10,26 @@ console.log(arrayRisposteGiuste);
 
 // Calcola il numero di risposte corrette e sbagliate
 const risposteCorrette = arrayRisposteGiuste.filter(
-  (risposta) => risposta === true
+    (risposta) => risposta === true
 ).length;
 const risposteSbagliate = 10 - risposteCorrette;
 
 // Dati per il grafico a ciambella
 const dati = {
-  datasets: [
-    {
-      data: [risposteSbagliate, risposteCorrette],
-      backgroundColor: ["#41FFFF", "#C2128D"],
-      borderWidth: 0,
-    },
-  ],
+    datasets: [
+        {
+            data: [risposteSbagliate, risposteCorrette],
+            backgroundColor: ["#C2128D", "#41FFFF"],
+            borderWidth: 0,
+        },
+    ],
 };
 
 // Opzioni del grafico
 const opzioni = {
-  responsive: true,
-  maintainAspectRatio: false,
-  cutout: 170, // Aumenta lo spazio interno alla ciambella
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: 170, // Aumenta lo spazio interno alla ciambella
 };
 
 // Ottieni il riferimento al canvas
@@ -37,30 +37,25 @@ const ctx = document.getElementById("myChart").getContext("2d");
 
 // Crea il grafico a ciambella
 const myChart = new Chart(ctx, {
-  type: "doughnut",
-  data: dati,
-  options: opzioni,
+    type: "doughnut",
+    data: dati,
+    options: opzioni,
 });
 
 const percenCorrette = document.getElementById("percentualeCorrette");
-percenCorrette.innerText = `${
-  (risposteCorrette / ArrayDomande.length) * 100
-}  %`;
+percenCorrette.innerText = `${(risposteCorrette / ArrayDomande.length) * 100}%`;
 
 const numCorrette = document.getElementById("numCorrette");
-numCorrette.innerText = `${risposteCorrette}/${ArrayDomande.length}  `;
+numCorrette.innerText = `${risposteCorrette}/${ArrayDomande.length} questions  `;
 
 const percenIncorrette = document.getElementById("percentualeIncorrette");
-percenIncorrette.innerText = `${
-  ((ArrayDomande.length - risposteCorrette) / ArrayDomande.length) * 100
-}  %`;
+percenIncorrette.innerText = `${((ArrayDomande.length - risposteCorrette) / ArrayDomande.length) * 100}%`;
 const numIncorrette = document.getElementById("numIncorrette");
 
-numIncorrette.innerText = `${ArrayDomande.length - risposteCorrette}/${
-  ArrayDomande.length
-}`;
+numIncorrette.innerText = `${ArrayDomande.length - risposteCorrette}/${ArrayDomande.length
+    } questions `;
 
 const btnpg4 = document.getElementById("pg4");
 btnpg4.addEventListener("click", function () {
-  window.location.href = "index4.html";
+    window.location.href = "index4.html";
 });
