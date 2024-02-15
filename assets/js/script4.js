@@ -39,3 +39,27 @@ function highlightStars(value) {
         }
     });
 }
+
+// Funzione per controllare se entrambi i campi sono compilati
+function checkInputs() {
+    const starsValue = voto;
+    const commentoValue = document.getElementById('commento').value.trim();
+
+    if (starsValue === 0 || commentoValue === '') {
+        alert('inserire commento e il numero di stelline.');
+        return false; // Se uno o entrambi i campi non sono compilati, restituisci falso
+    }
+
+    return true; // Entrambi i campi sono compilati
+}
+
+// Gestore di eventi per il pulsante "more info"
+const moreInfoButton = document.getElementById('Invia');
+
+moreInfoButton.addEventListener('click', function () {
+    const inputsAreValid = checkInputs();
+
+    if (inputsAreValid) {
+        alert('Recensione ricevuta. Grazie!');//risposta dopo aver verificato i campi(stelline e commento)
+    }
+});
