@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (!checkbox.checked) {
         popup.style.display = "block";
       } else {
-        window.open("index2.html", "_blank");
+        window.location.href="index2.html";
       }
     });
     close.addEventListener('click', function() {
