@@ -11,8 +11,8 @@ const risposteSbagliate = 10 - risposteCorrette;
 const dati = {
     
     datasets: [{
-        data: [risposteSbagliate, risposteCorrette ],
-        backgroundColor: ["#41FFFF", "#C2128D"],
+        data: [risposteCorrette, risposteSbagliate  ],
+        backgroundColor: ["#C2128D", "#41FFFF"],
         borderWidth: 0
     }]
 };
@@ -21,7 +21,7 @@ const dati = {
 const opzioni = {
     responsive: true,
     maintainAspectRatio: false,
-    cutout: 200 // Aumenta lo spazio interno alla ciambella
+    cutout: 180 // Aumenta lo spazio interno alla ciambella
 };
 
 // Ottieni il riferimento al canvas
