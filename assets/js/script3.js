@@ -35,12 +35,18 @@ const opzioni = {
 // Ottieni il riferimento al canvas
 const ctx = document.getElementById("myChart").getContext("2d");
 
+
+
+
+
 // Crea il grafico a ciambella
 const myChart = new Chart(ctx, {
     type: "doughnut",
     data: dati,
     options: opzioni,
 });
+
+
 
 const percenCorrette = document.getElementById("percentualeCorrette");
 percenCorrette.innerText = `${(risposteCorrette / ArrayDomande.length) * 100}%`;
@@ -59,3 +65,4 @@ const btnpg4 = document.getElementById("pg4");
 btnpg4.addEventListener("click", function () {
     window.location.href = "index4.html";
 });
+
