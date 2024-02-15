@@ -102,7 +102,19 @@ label {
   float: right;
   cursor: pointer;
 }
-
+.disabled {
+  background-color: rgba(128, 128, 128, 0.423);
+  text-transform: uppercase;
+  width: 10em;
+  font-weight: bold;
+  padding: 18px 45px;
+  color: rgba(0, 0, 0, 0.455);
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  position: relative;
+  right: -386px;
+}
 .bottone {
   text-transform: uppercase;
   width: 10em;
@@ -117,7 +129,8 @@ label {
   position: relative;
   right: -386px;
 }
-
+ 
+/* CSS PAGINA 2*/
 
 #main2 {
   text-align: center;
@@ -143,7 +156,6 @@ label {
   cursor: pointer;
   border-radius: 50px;
   border: 3px solid white;
-  background-color: transparent;
   margin: 20px;
   font-weight: bold;
   font-size: 20px;
@@ -154,15 +166,9 @@ label {
   margin-bottom: 30px;
 }
 
-.btn:active,
-.btn:focus,
-#btnDue:active,
-#btnDue:focus {
+.selezionato {
   background-color: rgb(220, 1, 220);
 }
-
-
-
 
 span {
   color: #d20094;
@@ -185,17 +191,25 @@ h4 {
 
 .progressbar-circle {
   fill: transparent;
-  stroke: rgb(247, 242, 242, 0.2);
-  stroke-width: 20;
+  stroke: rgb(247,  242,  242,  0.2);
+  stroke-width:  20;
+  /* Add the transform property to rotate the circle to start at  12:00 */
+  transform: rotate(-90deg);
+  transform-origin: center;
 }
 
 .progressbar-progress {
   fill: none;
   stroke: #00ffff;
-  stroke-width: 20;
-  stroke-dasharray: 502; 
-  stroke-dashoffset: 502; 
-  transition: stroke-dashoffset 1s ease; }
+  stroke-width:  20;
+  stroke-dasharray:  502;
+  stroke-dashoffset:  502;
+  transition: stroke-dashoffset  1s ease;
+  /* Make sure the progress bar also starts from the top */
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
 
 .progressbar-text {
   font-size: 50px;
@@ -209,6 +223,22 @@ h4 {
 }
 /* PAGINA 4 */
 
+
+/*pagina 3*/
+#stilepagina3{
+  color: white;
+  
+}
+.titolo3{
+  text-align: center;
+  margin-bottom: 100px;
+}
+#bottone3{
+  text-align: center;
+  margin-right: 800px;
+  margin-top: 400px;
+}
+ 
 /* PAGINA 4 */
 
 #paginaQuattro {
