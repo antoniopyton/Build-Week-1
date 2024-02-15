@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         star.addEventListener("mouseout", function(){
             highlightStars(voto);
-            console.log("test")
+    
         } )
     }
 
