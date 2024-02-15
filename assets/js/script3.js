@@ -1,5 +1,4 @@
 const ArrayDomandeJSON = localStorage.getItem("LunghezzaArrayDomande");
-
 const ArrayDomande = JSON.parse(ArrayDomandeJSON);
 console.log(ArrayDomande.length);
 
@@ -35,10 +34,6 @@ const opzioni = {
 // Ottieni il riferimento al canvas
 const ctx = document.getElementById("myChart").getContext("2d");
 
-
-
-
-
 // Crea il grafico a ciambella
 const myChart = new Chart(ctx, {
     type: "doughnut",
@@ -46,23 +41,26 @@ const myChart = new Chart(ctx, {
     options: opzioni,
 });
 
-
-
 const percenCorrette = document.getElementById("percentualeCorrette");
 percenCorrette.innerText = `${(risposteCorrette / ArrayDomande.length) * 100}%`;
 
 const numCorrette = document.getElementById("numCorrette");
-numCorrette.innerText = `${risposteCorrette}/${ArrayDomande.length} questions  `;
+numCorrette.innerText = `${risposteCorrette}/${ArrayDomande.length} questions `;
 
 const percenIncorrette = document.getElementById("percentualeIncorrette");
 percenIncorrette.innerText = `${((ArrayDomande.length - risposteCorrette) / ArrayDomande.length) * 100}%`;
-const numIncorrette = document.getElementById("numIncorrette");
 
-numIncorrette.innerText = `${ArrayDomande.length - risposteCorrette}/${ArrayDomande.length
-    } questions `;
+const numIncorrette = document.getElementById("numIncorrette");
+numIncorrette.innerText = `${ArrayDomande.length - risposteCorrette}/${ArrayDomande.length} questions `;
 
 const btnpg4 = document.getElementById("pg4");
 btnpg4.addEventListener("click", function () {
     window.location.href = "index4.html";
 });
 
+const commento = document.getElementById("commento");
+if ((risposteCorrette / ArrayDomande.length) * 100 >= 60) {
+    commento.innerText = "Promosso";
+} else {
+    commento.innerText = "Bocciato";
+}
