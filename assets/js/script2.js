@@ -93,7 +93,7 @@ const questions = [
     incorrect_answers: ["Python", "C", "Jakarta"],
   },
 ];
-
+localStorage.setItem("LunghezzaArrayDomande", JSON.stringify(questions));
 let domande = 0;
 let countdownInterval;
 const ArrayRisposte = [];
