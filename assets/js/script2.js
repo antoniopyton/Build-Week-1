@@ -155,26 +155,27 @@ const aggiornaNumeroDomanda = () => {
 // Funzione per avviare il timer
 
 const avviaTimer = () => {
-  let countdown =  10;
+  let countdown = 10;
   let progressbarCircle = document.querySelector(".progressbar-progress");
 
   const updateTimer = () => {
     document.querySelector(".progressbar-text").textContent = countdown;
-    let percentCompleted = (countdown /  10) *  100;
-    let dashOffset =  502 - (502 * percentCompleted) /  100;
+    let percentCompleted = (countdown / 10) * 100;
+    let dashOffset = 502 - (502 * percentCompleted) / 100;
     progressbarCircle.style.strokeDashoffset = dashOffset;
     countdown--;
 
-    if (countdown <  0) {
+    if (countdown < 0) {
       // Check if any answer has been selected
-      const rispostaSelezionata = document.getElementsByClassName("selezionato")[0];
+      const rispostaSelezionata =
+        document.getElementsByClassName("selezionato")[0];
       // If no answer is selected, simulate a click on the first answer to force selection
       if (!rispostaSelezionata) {
-        document.querySelector('.btn').click();
+        document.querySelector(".btn").click();
       }
       procediConDomandaSuccessiva(); // Call the function to move to the next question
     } else {
-      countdownInterval = setTimeout(updateTimer,  1000);
+      countdownInterval = setTimeout(updateTimer, 1000);
     }
   };
 
@@ -187,6 +188,7 @@ const procediConDomandaSuccessiva = () => {
   const rispostaGiusta = document.getElementById("btnDue");
   if (rispostaGiusta.innerText === rispostaSelezionata.innerText) {
     ArrayRisposte.push(true);
+    localStorage.setItem("ArrayGiuste", JSON.stringify(ArrayRisposte));
   }
   console.log(ArrayRisposte);
   domande++;
