@@ -94,6 +94,10 @@ const questions = [
   },
 ];
 localStorage.setItem("LunghezzaArrayDomande", JSON.stringify(questions));
+document.addEventListener("DOMContentLoaded", function () {
+  // Svuota il localStorage
+  localStorage.removeItem("ArrayGiuste");
+});
 let domande = 0;
 let countdownInterval;
 const ArrayRisposte = [];
@@ -155,7 +159,7 @@ const aggiornaNumeroDomanda = () => {
 // Funzione per avviare il timer
 
 const avviaTimer = () => {
-  let countdown = 10;
+  let countdown = 5;
   let progressbarCircle = document.querySelector(".progressbar-progress");
 
   const updateTimer = () => {
