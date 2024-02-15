@@ -193,7 +193,7 @@ h4 {
   fill: transparent;
   stroke: rgb(247,  242,  242,  0.2);
   stroke-width:  20;
-  /* Add the transform property to rotate the circle to start at  12:00 */
+  
   transform: rotate(-90deg);
   transform-origin: center;
 }
@@ -205,7 +205,7 @@ h4 {
   stroke-dasharray:  502;
   stroke-dashoffset:  502;
   transition: stroke-dashoffset  1s ease;
-  /* Make sure the progress bar also starts from the top */
+  
   transform: rotate(-90deg);
   transform-origin: center;
 }
@@ -221,6 +221,8 @@ h4 {
 #headerDue {
   margin-bottom: 0;
 }
+
+
 /*pagina 3*/
 #stilepagina3{
   color: white;
@@ -283,3 +285,21 @@ h4 {
 #btnInfo {
   position: static;
 }
+
+.chart-container{
+  width: 800px; /* Larghezza desiderata */
+    height: 600px; /* Altezza desiderata */
+    margin: 0 auto;
+
+}
+
+.h1pg3{
+  text-align: center;
+  font-size: 60px;
+}
+
+.h2pg3{
+  text-align: center;
+  font-weight: lighter;
+}
+
