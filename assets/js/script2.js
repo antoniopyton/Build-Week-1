@@ -127,10 +127,10 @@ const mostraRisposte = (elemento) => {
 };
 
 aggiungiClickRisposte = () => {
-  const risposteSbagliate = document.querySelectorAll(".btn");
-  risposteSbagliate.forEach((button, i) => {
+  const risposte = document.querySelectorAll(".btn");
+  risposte.forEach((button, i) => {
     button.addEventListener("click", function () {
-      risposteSbagliate.forEach((risposta) => {
+      risposte.forEach((risposta) => {
         risposta.classList.remove("selezionato");
       });
       button.classList.add("selezionato");
@@ -153,6 +153,7 @@ const aggiornaNumeroDomanda = () => {
 };
 
 // Funzione per avviare il timer
+
 const avviaTimer = () => {
   let countdown = 10;
   let progressbarCircle = document.querySelector(".progressbar-progress");
@@ -165,7 +166,7 @@ const avviaTimer = () => {
     countdown--;
 
     if (countdown < 0) {
-      procediConDomandaSuccessiva();
+      procediConDomandaSuccessiva(); // Chiamata alla funzione per passare alla domanda successiva quando il timer raggiunge zero
     } else {
       countdownInterval = setTimeout(updateTimer, 1000);
     }
@@ -173,7 +174,6 @@ const avviaTimer = () => {
 
   updateTimer();
 };
-
 // Funzione per gestire il click sul pulsante "PROCEED"
 const procediConDomandaSuccessiva = () => {
   const rispostaSelezionata = document.getElementsByClassName("selezionato")[0];
