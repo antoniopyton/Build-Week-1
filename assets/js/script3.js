@@ -24,6 +24,8 @@ const dati = {
     ],
 };
 
+
+
 // Opzioni del grafico
 const opzioni = {
     responsive: true,
@@ -39,7 +41,10 @@ const myChart = new Chart(ctx, {
     type: "doughnut",
     data: dati,
     options: opzioni,
+    
 });
+
+
 
 const percenCorrette = document.getElementById("percentualeCorrette");
 percenCorrette.innerText = `${(risposteCorrette / ArrayDomande.length) * 100}%`;
@@ -58,9 +63,17 @@ btnpg4.addEventListener("click", function () {
     window.location.href = "index4.html";
 });
 
-const commento = document.getElementById("commento");
+
+
+const testoCommento = document.getElementById("testoCommento")
+const commento = document.getElementById("sottoCommento")
+const commentoh2 = document.getElementById("commento");
 if ((risposteCorrette / ArrayDomande.length) * 100 >= 60) {
-    commento.innerText = "Promosso";
+    commentoh2.innerText = "Congratulations!";
+    commento.innerText = "You passed the exam."
+    testoCommento.innerText = "We'll send you the certificate\n in few minutes.\nCheck your email (including\n promotions / spam folder) "
 } else {
-    commento.innerText = "Bocciato";
+    commento.innerText = "You failed the exam";
+    commento.style.color = "#BD0185"
+    testoCommento.innerText = "Study more and try again.\n\n Stay strong and keep pushing\n forward in your learning journey."
 }

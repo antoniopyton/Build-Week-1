@@ -381,3 +381,22 @@ h4 {
   transform: translateX(-50%);
   cursor: pointer;
 }
+
+#commento{
+  position: relative;
+  bottom: 340px;
+}
+
+#sottoCommento{
+  position: relative;
+  bottom: 360px;
+  font-size: 20px;
+  color: #00ffff ;
+}
+
+#testoCommento{
+  position: relative;
+  bottom: 350px;
+  font-size: 17px;
+  font-weight: 300;
+}
