@@ -8,6 +8,7 @@ body {
   font-size: 1.2rem;
   line-height: 1.65;
   margin: 0px 170px;
+  
 }
 
 section p,
@@ -379,4 +380,23 @@ h4 {
   bottom: 10%; /* Posiziona a 10% dal basso del contenitore */
   transform: translateX(-50%);
   cursor: pointer;
+}
+
+#commento{
+  position: relative;
+  bottom: 340px;
+}
+
+#sottoCommento{
+  position: relative;
+  bottom: 360px;
+  font-size: 20px;
+  color: #00ffff ;
+}
+
+#testoCommento{
+  position: relative;
+  bottom: 350px;
+  font-size: 17px;
+  font-weight: 300;
 }
