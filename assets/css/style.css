@@ -303,3 +303,12 @@ h4 {
   font-weight: lighter;
 }
 
+/* PAGINA 5 */
+
+.correct-answer {
+  color: green;
+}
+
+.wrong-answer {
+  color: red;
+}
