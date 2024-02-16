@@ -98,12 +98,17 @@ label {
 }
 
 .popup-content {
-  color: black;
-  background-color: #fefefe;
+  color: rgb(8, 8, 8) ;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #00ffff;
   margin: 20% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 10px 10px 10px;
 }
 
 .close {
