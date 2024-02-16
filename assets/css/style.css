@@ -400,3 +400,22 @@ h4 {
   font-size: 17px;
   font-weight: 300;
 }
+/*Footer Quarta pagina*/
+
+footer {
+  text-align: center;
+  width: 100%;
+  margin-top: 300px;
+  margin-bottom: 0;
+
+}
+
+footer div {
+  font-size: 30px;
+}
+
+footer div a {
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
