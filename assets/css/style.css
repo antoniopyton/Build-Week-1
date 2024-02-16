@@ -1,8 +1,9 @@
 body {
+  
   color: white;
   background-image: url(../img/bg.jpg);
   background-size: cover;
-  font-family: "Outfit", sans-serif;
+  font-family: "Inter", sans-serif; 
   box-sizing: border-box;
   font-size: 1.2rem;
   line-height: 1.65;
@@ -72,7 +73,13 @@ ul li {
 }
 
 #checkbox {
-  margin-bottom: 120px;
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+
 }
 
 label {
@@ -129,7 +136,7 @@ label {
   position: relative;
   right: -386px;
 }
- 
+
 /* CSS PAGINA 2*/
 
 #main2 {
@@ -191,9 +198,9 @@ h4 {
 
 .progressbar-circle {
   fill: transparent;
-  stroke: rgb(247,  242,  242,  0.2);
-  stroke-width:  20;
-  
+  stroke: rgb(247, 242, 242, 0.2);
+  stroke-width: 20;
+
   transform: rotate(-90deg);
   transform-origin: center;
 }
@@ -201,15 +208,14 @@ h4 {
 .progressbar-progress {
   fill: none;
   stroke: #00ffff;
-  stroke-width:  20;
-  stroke-dasharray:  502;
-  stroke-dashoffset:  502;
-  transition: stroke-dashoffset  1s ease;
-  
+  stroke-width: 20;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  transition: stroke-dashoffset 1s ease;
+
   transform: rotate(-90deg);
   transform-origin: center;
 }
-
 
 .progressbar-text {
   font-size: 50px;
@@ -222,22 +228,75 @@ h4 {
   margin-bottom: 0;
 }
 
-
 /*pagina 3*/
-#stilepagina3{
+#stilepagina3 {
   color: white;
-  
 }
-.titolo3{
+.titolo3 {
   text-align: center;
   margin-bottom: 100px;
 }
-#bottone3{
+#bottone3 {
   text-align: center;
   margin-right: 800px;
   margin-top: 400px;
+  
 }
- 
+
+.riepilogo {
+  
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 90px;
+}
+.contenitoreRisultati {
+  position: absolute; /* Posizionamento assoluto */
+  top: 50%; /* Spostalo verso il 50% dell'altezza della finestra */
+  left: 50%; /* Spostalo verso il 50% della larghezza della finestra */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Sposta indietro di metà della propria dimensione */
+  text-align: center;
+  width: 100%; /* Allinea il testo al centro */
+}
+
+.chart-container {
+  width: 400px; /* Larghezza desiderata */
+  height: 300px; /* Altezza desiderata */
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.h1pg3 {
+  text-align: center;
+  font-size: 60px;
+  margin: 0;
+  margin-bottom: -35px;
+  font-weight: 200;
+
+}
+
+#sinistra, #percentualeCorrette{
+  text-align: left;
+  font-weight: 700;
+}
+
+#destra, #percentualeIncorrette {
+  text-align: right;
+  font-weight: 700;
+}
+
+#numCorrette, #numIncorrette{
+  font-weight: 400;
+}
+
+.h2pg3 {
+  text-align: center;
+  font-weight: lighter;
+}
+
 /* PAGINA 4 */
 
 #paginaQuattro {
@@ -286,29 +345,38 @@ h4 {
   position: static;
 }
 
-.chart-container{
-  width: 800px; /* Larghezza desiderata */
-    height: 600px; /* Altezza desiderata */
-    margin: 0 auto;
-
+.chart-container {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
 }
 
-.h1pg3{
+.h1pg3 {
   text-align: center;
-  font-size: 60px;
+  font-size: 50px;
 }
 
-.h2pg3{
+.h2pg3 {
   text-align: center;
   font-weight: lighter;
 }
 
-/* PAGINA 5 */
-
-.correct-answer {
-  color: green;
-}
-
-.wrong-answer {
-  color: red;
+.btnpg3 {
+  width: 50%; /* Larghezza del 50% del contenitore genitore */
+  max-width: 200px; /* Massimo 200px di larghezza */
+  height: auto; /* Altezza automatica in base al contenuto */
+  margin: auto;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  line-height: normal; /* Ripristina la line-height normale */
+  padding: 15px 20px; /* Riduci il padding */
+  position: absolute;
+  left: 50%;
+  bottom: 10%; /* Posiziona a 10% dal basso del contenitore */
+  transform: translateX(-50%);
+  cursor: pointer;
 }
