@@ -97,17 +97,22 @@ localStorage.setItem("LunghezzaArrayDomande", JSON.stringify(questions));
 document.addEventListener("DOMContentLoaded", function () {
   // Svuota il localStorage
   localStorage.removeItem("ArrayGiuste");
+  inizializzaQuiz(); //parte la funzione
 });
+
+//VARIABILI GLOBALI
 let domande = 0;
 let countdownInterval;
 const ArrayRisposte = [];
 const btnProcedi = document.getElementById("bottone");
 // Funzione per mostrare una domanda
 const mostraDomanda = (elemento) => {
+  //
   clearTimeout(countdownInterval);
-  const domandeElement = document.getElementById("domande");
-  domandeElement.innerText = elemento.question;
+  const domandeElement = document.getElementById("domande"); // indica il testo della domanda nel file html
+  domandeElement.innerText = elemento.question; //
 
+  //serie di funzioni
   mostraRisposte(elemento);
   mostraRispostaGiusta(elemento);
   aggiungiClickRisposte();
@@ -117,11 +122,13 @@ const mostraDomanda = (elemento) => {
 
 // Funzione per mostrare le risposte sbagliate
 const mostraRisposte = (elemento) => {
-  const risposteSbagliate = document.querySelectorAll(".btn");
+  //
+  const risposteSbagliate = document.querySelectorAll(".btn"); //  Seleziona le risposte e le inserisce nei pulsanti
   risposteSbagliate.forEach((button, i) => {
     if (button.id !== "btnDue") {
       if (elemento.incorrect_answers[i] != null) {
-        button.innerHTML = elemento.incorrect_answers[i];
+        //serve per nascondere i pulsanti che non hanno opzioni risposta
+        button.innerHTML = elemento.incorrect_answers[i]; //se esiste, la posiziona nel pulsante
         button.style.display = "inline-block";
       } else {
         button.style.display = "none";
@@ -138,8 +145,8 @@ aggiungiClickRisposte = () => {
         risposta.classList.remove("selezionato");
       });
       button.classList.add("selezionato");
-      btnProcedi.disabled = false;
-      btnProcedi.classList.add("bottone");
+      btnProcedi.disabled = false; //
+      btnProcedi.classList.add("bottone"); //
     });
   });
 };
@@ -150,7 +157,7 @@ const mostraRispostaGiusta = (elemento) => {
   rispostaGiusta.innerHTML = elemento.correct_answer;
 };
 
-// Funzione per aggiornare il numero della domanda
+// Funzione per aggiornare la scritta in basso con il numero della domanda
 const aggiornaNumeroDomanda = () => {
   const numeroQuestion = document.getElementById("numeroQuestionId");
   numeroQuestion.innerText = domande + 1;
@@ -164,22 +171,22 @@ const avviaTimer = () => {
 
   const updateTimer = () => {
     document.querySelector(".progressbar-text").textContent = countdown;
-    let percentCompleted = (countdown / 10) * 100;
-    let dashOffset = 502 - (502 * percentCompleted) / 100;
+    let percentCompleted = (countdown / 10) * 100; // percentuale completata del timer
+    let dashOffset = 502 - (502 * percentCompleted) / 100; //aggiorna lo stile
     progressbarCircle.style.strokeDashoffset = dashOffset;
-    countdown--;
+    countdown--; // decremencrememento il valore di countdown
 
     if (countdown < 0) {
-      // Check if any answer has been selected
+      // controlla se è stata selezionata
       const rispostaSelezionata =
         document.getElementsByClassName("selezionato")[0];
-      // If no answer is selected, simulate a click on the first answer to force selection
+      // se non trova nulla di selezionato, simula il click su una risposta
       if (!rispostaSelezionata) {
         document.querySelector(".btn").click();
       }
-      procediConDomandaSuccessiva(); // Call the function to move to the next question
+      procediConDomandaSuccessiva();
     } else {
-      countdownInterval = setTimeout(updateTimer, 1000);
+      countdownInterval = setTimeout(updateTimer, 1000); //aggiornamento dei timer
     }
   };
 
@@ -191,6 +198,7 @@ const procediConDomandaSuccessiva = () => {
 
   const rispostaGiusta = document.getElementById("btnDue");
   if (rispostaGiusta.innerText === rispostaSelezionata.innerText) {
+    //se il testo della risposta selezionata....
     ArrayRisposte.push(true);
     localStorage.setItem("ArrayGiuste", JSON.stringify(ArrayRisposte));
   }
@@ -221,12 +229,11 @@ const aggiungiListenerProcedi = () => {
 
 // Funzione iniziale per mostrare la prima domanda all'avvio
 const inizializzaQuiz = () => {
+  //chiama la funzione mostraDomanda e aggiungiListenerProcedi
   mostraDomanda(questions[domande]);
   aggiungiListenerProcedi();
 };
 
-// Avvia il quiz quando la pagina si carica
-document.addEventListener("DOMContentLoaded", inizializzaQuiz);
 // TIPS:
 
 // SE MOSTRI TUTTE LE RISPOSTE ASSIEME IN FORMATO LISTA:
