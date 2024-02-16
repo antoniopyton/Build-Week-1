@@ -43,7 +43,7 @@ function highlightStars(value) {
 // Funzione per controllare se entrambi i campi sono compilati
 function checkInputs() {
     const starsValue = voto;
-    const commentoValue = document.getElementById('commento').value.trim();
+    const commentoValue = document.getElementById('commentoPg4').value.trim();
 
     if (starsValue === 0 || commentoValue === '') {
         alert('inserire commento e il numero di stelline.');
